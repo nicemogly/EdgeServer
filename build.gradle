@@ -1,6 +1,6 @@
 // 1. 플러그인 설정
 plugins {
-    id 'java'
+    id 'groovy'
     id 'org.springframework.boot' version '3.3.4' // 본인의 스프링 부트 버전
     id 'io.spring.dependency-management' version '1.1.6'
 }
@@ -24,8 +24,15 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // 데이터베이스 JPA
     runtimeOnly 'org.postgresql:postgresql' // PostgreSQL 드라이버
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.apache.groovy:groovy'
 }
 
 tasks.named('test') {
     useJUnitPlatform()
+}
+
+// build.gradle 파일 맨 아래에 추가하세요.
+springBoot {
+    mainClass = 'com.nicemogly.edgeserver.EdgeServerApplication'
+    // ⚠️ 주의: 위 주소는 본인의 EdgeServerApplication.groovy 파일 맨 윗줄에 적힌 'package 패키지명'과 클래스 이름을 합친 것이어야 합니다.
 }
