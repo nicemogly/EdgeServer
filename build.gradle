@@ -33,6 +33,6 @@ tasks.named('test') {
 
 // build.gradle 파일 맨 아래에 추가하세요.
 springBoot {
-    mainClass = 'corg.example.Main'
+    mainClass = 'org.example.Main'
     // ⚠️ 주의: 위 주소는 본인의 EdgeServerApplication.groovy 파일 맨 윗줄에 적힌 'package 패키지명'과 클래스 이름을 합친 것이어야 합니다.
 }
