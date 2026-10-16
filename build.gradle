@@ -1,0 +1,31 @@
+// 1. 플러그인 설정
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.3.4' // 본인의 스프링 부트 버전
+    id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17) // 본인의 자바 버전
+    }
+}
+
+// 🔥 2. 이 부분이 반드시 있어야 라이브러리를 인터넷에서 찾아옵니다!
+repositories {
+    mavenCentral()
+}
+
+// 3. 의존성 설정 (오타가 없는지 철저히 확인)
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa' // 데이터베이스 JPA
+    runtimeOnly 'org.postgresql:postgresql' // PostgreSQL 드라이버
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
