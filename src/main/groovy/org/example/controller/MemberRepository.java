@@ -1,3 +1,3 @@
-package com.example.demo;
+package org.example.controller;
 import org.springframework.data.jpa.repository.JpaRepository;
 public interface MemberRepository extends JpaRepository<Member, Long> {}
