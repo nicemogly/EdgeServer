@@ -10,7 +10,7 @@ public class ApiController {
 
 
 
-    @GetMapping("/hello")
+    @GetMapping("/hello1")
     public List<Member> getMembers() { return memberRepository.findAll(); }
 
     @PostMapping("/join")

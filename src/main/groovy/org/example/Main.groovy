@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController  // 👈 추가
 import org.springframework.web.bind.annotation.GetMapping      // 👈 추가
 
 @RestController // 👈 1. 이 클래스가 웹 요청을 처리하는 컨트롤러임을 선언합니다.
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = ["org.example"])
 class Main {
     static void main(String[] args) {
         // 단순히 println "world!"만 있다면 지우거나 아래 코드 위쪽으로 옮기세요.
@@ -20,4 +20,6 @@ class Main {
     String home() {
         return "스프링 부트 서버가 정상적으로 연결되었습니다! Hello Edge Server!" // 👈 브라우저에 뜰 문구
     }
+
+
 }
