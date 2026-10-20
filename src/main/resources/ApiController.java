@@ -8,6 +8,8 @@ public class ApiController {
     private final MemberRepository memberRepository;
     public ApiController(MemberRepository memberRepository) { this.memberRepository = memberRepository; }
 
+
+
     @GetMapping("/hello")
     public List<Member> getMembers() { return memberRepository.findAll(); }
 
