@@ -18,6 +18,10 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    enabled = false
+}
+
 // 3. 의존성 설정 (오타가 없는지 철저히 확인)
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
